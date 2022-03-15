@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const webpack = require('webpack');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -15,6 +16,49 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
+
+  // plugins: [
+  //   function addPolyfills() {
+  //     return {
+  //         name: 'add-webpack-polyfills',
+  //         configureWebpack() {
+  //             return {
+  //                 resolve: {
+  //                     /*
+  //                      * This loads the polyfills that we need
+  //                      */
+  //                     fallback: {
+  //                         buffer: require.resolve('buffer/'),
+  //                         util: require.resolve('util/'),
+  //                     },
+  //                 },
+  //                 plugins: [
+  //                     /*
+  //                      * webpack.ProvidePlugin() will utilize the polyfills above and expose
+  //                      * the necessary modules (e.g., `Buffer`, `TextDecoder`, etc.) automatically
+  //                      * on the global object without needing to explicitly import them.
+  //                      * See: https://webpack.js.org/plugins/provide-plugin/
+  //                      */
+  //                     new webpack.ProvidePlugin({
+  //                         Buffer: ['buffer', 'Buffer'],
+  //                     }),
+  //                     new webpack.ProvidePlugin({
+  //                         TextEncoder: ['util', 'TextEncoder'],
+  //                     }),
+  //                     new webpack.ProvidePlugin({
+  //                         TextDecoder: ['util', 'TextDecoder'],
+  //                     }),
+  //                     new webpack.DefinePlugin({
+  //                       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+  //                       'process.env.DEBUG': JSON.stringify(process.env.DEBUG),
+  //                       'process.env.NODE_DEBUG': JSON.stringify(process.env.DEBUG),
+  //                     })
+  //                 ],
+  //             };
+  //         },
+  //     };
+  // },
+  // ],
 
   presets: [
     [
